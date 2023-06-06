@@ -1,7 +1,5 @@
 import './App.css';
 
-import NavBar from './components/NavBar';
-
 import { useState, useEffect } from 'react';
 
 import {
@@ -10,7 +8,6 @@ import {
 } from "react-router-dom";
 
 //pages
-
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import WorkPage from './pages/WorkPage';
@@ -36,15 +33,16 @@ const router = createBrowserRouter([
     element: <WorkPage />,
   },
   {
-    path: "/",
+    path: "/home",
     element: <HomePage />,
   },
 ]);
 
-function App() {
+export default function App() {
 
   const [width, setWidth]   = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
+
   const updateDimensions = () => {
       setWidth(window.innerWidth);
       setHeight(window.innerHeight);
@@ -70,4 +68,3 @@ function App() {
   );
 }
 
-export default App;

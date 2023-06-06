@@ -11,30 +11,12 @@ import SecondaryButton from "../components/SecondaryButton";
 
 export default function ContactPage(props) {
 
-    const theme = useSelector((state) => state.theme.theme);
-
-    const [width, setWidth]   = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
-  const updateDimensions = () => {
-      setWidth(window.innerWidth);
-      setHeight(window.innerHeight);
-  }
-
-  useEffect(() => {
-      window.addEventListener("resize", updateDimensions);
-      return () => window.removeEventListener("resize", updateDimensions);
-  }, [])
-
-    
+    const theme = useSelector((state) => state.theme.theme);    
 
     return (
         <>
-        <NavBar 
-        height={height}
-        width={width}
-        />
+            <NavBar />
             
-                
             <p style={{margin: 0, marginTop: '3rem', color: theme === 'dark' ? 'white' : 'black', fontSize: '3rem'}}>
                 Contact
             </p>
